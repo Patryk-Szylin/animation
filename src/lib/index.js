@@ -19,7 +19,11 @@ export class Point {
     }
 }
 
-export const normalize = (value, min, max) => (value - min) / (max - min);
+export const normalize = (value, min, max) => {
+    const n = (value - min) / (max - min);
+    return n > 1 ? 1 : n;
+}
+
 
 
 export const cubicBezier = (p1, p2, p3, p4, t) => {
